@@ -93,8 +93,7 @@ class WidgetBase(object):
         autocomplete = self.autocomplete(values=values)
 
         if values and not autocomplete.validate_values():
-            raise forms.ValidationError('%s cannot validate %s' % (
-                self.autocomplete_name, values))
+            values = []
 
         self.process_js_attributes()
 
